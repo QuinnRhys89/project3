@@ -132,7 +132,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-main {
+* {
+  font-family: 'Ubuntu', sans-serif; }
+
+.wrapper {
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,15 +149,21 @@ main {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+  border: 2px solid black;
+  width: 90%;
+  height: 100vh; }
+
+button {
+  border: 1px solid black;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  border-radius: 5px 5px; }
+
+.shuffle {
+  margin-top: 30px; }
 
 .card-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
   height: 300px;
   position: relative;
   width: 100%; }
@@ -163,7 +173,7 @@ main {
   -webkit-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  width: 180px;
+  width: 160px;
   -webkit-perspective: 1000;
   perspective: 1000;
   -ms-transform: perspective(1000px);
@@ -171,9 +181,11 @@ main {
   -ms-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 30px 0 15px 15px; }
+  right: 50%;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+  bottom: 0; }
 
 .card-stack.ani0 {
   right: 948px;
@@ -208,22 +220,26 @@ main {
   bottom: 0; }
 
 .card-stack.ani8 {
-  right: 237px;
+  right: 474px;
   bottom: 0; }
 
 .card-stack.ani9 {
-  right: 511px;
+  right: 237px;
   bottom: 0; }
 
 .card-stack.ani10 {
   right: 237px;
   bottom: 0; }
 
-button {
-  margin-top: 80px; }
-
 .dialogue {
   display: none; }
+
+.initial-dialogue {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 50px;
+  margin: 0;
+  padding: 0; }
 
 img {
   max-width: 100%; }

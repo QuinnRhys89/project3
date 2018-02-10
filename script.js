@@ -2,12 +2,19 @@ $(function () {
 
     // Dialogue on load
     function displayDialogue(){
-        $(".dialogue").append("<p class='initial-dialogue'>Pick a card!</p>");
+        $(".dialogue").append("<p class='initial-dialogue'>Pick a card...</p>");
         $('.dialogue').slideUp(300).delay(1000).fadeIn(400);
-        // $('.initial-dialogue').delay(1000).text("Any card");
+        $('.shuffle').hide();
+        $('.initial-dialogue').delay(3000).fadeOut()
     }
 
+    // function secondaryDialogue(){
+    //     $('.dialogue').append("<p class='second-dialogue'>Any Card...</p>");
+    //     $('.second-dialogue').slideUp(300).delay(1000).fadeIn(400);
+    // }
+
     displayDialogue();
+    // secondaryDialogue();
 
 
 // When the page loads, loop through that array and append each card to the container _shuffle method
@@ -40,7 +47,8 @@ $(function () {
                 // Add class of cardstack ani and each index (e)
                 $(".card-stack").eq(e).attr("class", "card-stack ani" + e);
             }, e * 150)
-            console.log(e);
+            $('.shuffle').delay(3000).fadeIn(400);
+            $('.layout').delay(3000).fadeOut(400);
         });
         // Show shuffle button and hide layout button
     });
