@@ -1,0 +1,109 @@
+@import "_setup.scss";
+
+   main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .card-container{
+        display: flex;
+        align-items: flex-end;
+        height: 300px;
+        position: relative;
+        width: 100%;
+    }
+
+    .card-stack {
+        position: absolute;
+        transition: all 1s cubic-bezier(0.68,-.55,.265,1.55);
+
+        width: 180px;
+  
+        perspective: 1000;
+        -ms-transform: perspective(1000px);
+        -moz-transform: perspective(1000px);
+        -ms-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin: 30px 0 15px 15px;
+    }
+    
+    .card-stack.ani0 {
+        right: 948px;
+        bottom: 326px;
+    }
+    
+    .card-stack.ani1 {
+        right: 711px;
+        bottom: 326px;
+    }
+    
+    .card-stack.ani2 {
+        right: 474px;
+        bottom: 326px;
+    }
+    
+    .card-stack.ani3 {
+        right: 237px;
+        bottom: 326px;
+    }
+    
+    .card-stack.ani4 {
+        right: 0;
+        bottom: 326px;
+    }
+    
+    .card-stack.ani5 {
+        right: 948px;
+        bottom: 0;
+    }
+    
+    .card-stack.ani6 {
+        right: 711px;
+        bottom: 0;
+    }
+    
+    .card-stack.ani7 {
+        right: 474px;
+        bottom: 0;
+    }
+    
+    .card-stack.ani8 {
+        right: 237px;
+        bottom: 0;
+    }
+
+    .card-stack.ani9 {
+        right: 511px;
+        bottom: 0;
+    }
+
+    .card-stack.ani10 {
+        right: 237px;
+        bottom: 0;
+    }
+
+    button{
+        margin-top: 80px;
+    }
+
+    .dialogue{
+        display: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    .tabbed{
+        border: 3px solid red;
+    }
+
+    .fortune{
+        display: none;
+    }
