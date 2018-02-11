@@ -2,16 +2,20 @@
 
     *{
         font-family:'Ubuntu', sans-serif;
+        margin: 0;
+        padding: 0;
     }
 
     main{
-        
+        height: 100vh;
+        width: 100%;
     }
     
     .wrapper{
-        margin: 20px auto;
+        background-image: url("../assets/hypnotize.png");
+        margin: 0 auto;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         flex-direction: column;  
         border: 2px solid black;
@@ -32,7 +36,7 @@
     }
 
     .card-container{
-        height: 80vh;
+        height: 200px;
         position: relative;
         width: 80%;
     }
@@ -41,7 +45,7 @@
         position: absolute;
         transition: all 1s cubic-bezier(0.68,-.55,.265,1.55);
 
-        width: 150px;
+        width: 140px;
   
         perspective: 1000;
         -ms-transform: perspective(1000px);
@@ -57,63 +61,147 @@
     }
     
     .card-stack.ani0 {
-        right: 948px;
-        bottom: 326px;
+        right: 100%;
+        bottom: 100%;
     }
     
     .card-stack.ani1 {
-        right: 711px;
-        bottom: 326px;
+        right: 83.34%;
+        bottom: 100%;
     }
     
     .card-stack.ani2 {
-        right: 474px;
-        bottom: 326px;
+        right: 66.67%;
+        bottom: 100%;
     }
     
     .card-stack.ani3 {
-        right: 237px;
-        bottom: 326px;
+        right: 50%;
+       bottom: 100%;
     }
     
     .card-stack.ani4 {
-        right: 0;
-        bottom: 326px;
+        right: 33.34%;
+        bottom: 100%;
     }
     
     .card-stack.ani5 {
-        right: 948px;
-        bottom: 0;
+        right: 16.67%;
+        bottom: 100%;
     }
     
     .card-stack.ani6 {
-        right: 711px;
-        bottom: 0;
+        right: 0;
+        bottom: 100%;
     }
     
     .card-stack.ani7 {
-        right: 474px;
+        right: 100%;
         bottom: 0;
     }
 
     .card-stack.ani8 {
-        right: 474px;
+        right: 83.34%;
         bottom: 0;
     }
     
     .card-stack.ani9 {
-        right: 237px;
+        right: 66.67%;
         bottom: 0;
     }
 
     .card-stack.ani10 {
-        right: 237px;
+        right: 33.34%;
         bottom: 0;
     }
 
-    .dialogue{
-        display: none;
+    .card-stack.ani11 {
+        right: 16.67%;
+        bottom: 0;
     }
+
+    .card-stack.ani12 {
+        right: 0;
+        bottom: 0;
+    }
+
+    .card-stack.ani13 {
+        right: 50%;
+        bottom: 0;
+    }
+
+
+// Positions for Shuffle
+
+.card-stack.ani0 {
+    right: 100%;
+    bottom: 100%;
+}
+
+.card-stack.ani1 {
+    right: 83.34%;
+    bottom: 100%;
+}
+
+.card-stack.ani2 {
+    right: 66.67%;
+    bottom: 100%;
+}
+
+.card-stack.ani3 {
+    right: 50%;
+    bottom: 100%;
+}
+
+.card-stack.ani4 {
+    right: 33.34%;
+    bottom: 100%;
+}
+
+.card-stack.ani5 {
+    right: 16.67%;
+    bottom: 100%;
+}
+
+.card-stack.ani6 {
+    right: 0;
+    bottom: 100%;
+}
+
+.card-stack.ani7 {
+    right: 100%;
+    bottom: 0;
+}
+
+.card-stack.ani8 {
+    right: 83.34%;
+    bottom: 0;
+}
+
+.card-stack.ani9 {
+    right: 66.67%;
+    bottom: 0;
+}
+
+.card-stack.ani10 {
+    right: 33.34%;
+    bottom: 0;
+}
+
+.card-stack.ani11 {
+    right: 16.67%;
+    bottom: 0;
+}
+
+.card-stack.ani12 {
+    right: 0;
+    bottom: 0;
+}
+
+.card-stack.ani13 {
+    right: 50%;
+    bottom: 0;
+}
 
     .initial-dialogue{
         text-transform: uppercase;
@@ -121,6 +209,7 @@
         font-size: 50px;
         margin: 0;
         padding: 0;
+        position: absolute;
     }
 
     img{
@@ -128,9 +217,59 @@
     }
 
     .tabbed{
-        border: 3px solid red;
+        background: red;
     }
 
-    .fortune{
+    // Styling for Empty Divs
+    .fortune-container,
+    .dialogue{
         display: none;
     }
+
+    // End Result of Tarot Reading
+    .endresult{
+        position:absolute;
+        z-index: 99999000;
+    }
+
+/* Pulse Animation */
+.pulse{
+    animation-name: pulse;
+    -webkit-animation-name: pulse;  
+
+    animation-duration: 2.5s;   
+    -webkit-animation-duration: 2.5s;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+// @keyframes pulse {
+//     0% {
+//         transform: scale(0.9);
+//         opacity: 0.7;       
+//     }
+//     50% {
+//         transform: scale(1);
+//         opacity: 1; 
+//     }   
+//     100% {
+//         transform: scale(0.9);
+//         opacity: 0.7;   
+//     }           
+// }
+
+// @-webkit-keyframes pulse {
+//     0% {
+//         -webkit-transform: scale(0.95);
+//         opacity: 0.7;       
+//     }
+//     50% {
+//         -webkit-transform: scale(1);
+//         opacity: 1; 
+//     }   
+//     100% {
+//         -webkit-transform: scale(0.95);
+//         opacity: 0.7;   
+//     }           
+// }

@@ -1,5 +1,6 @@
 $(function () {
-
+    
+    // Array of Tarot Cards
     const fortuneArray =[
         {
         url:"assets/fortune.jpg",
@@ -10,8 +11,6 @@ $(function () {
         class:"endresult"
         }
     ]
-
-    // console.log(fortuneArray, "ARRAY");
 
     // Dialogue on load
     function displayDialogue(){
@@ -35,10 +34,8 @@ $(function () {
     $('.card-stack').click(function () {
         if ($(this).hasClass('tabbed')){
             displayFortune();
-            console.log("HELLLO");
         } else{
             $('.card-stack').removeClass('tabbed');
-            console.log($(".card-stack"));
             $(this).addClass('tabbed');
         }
     });

@@ -133,16 +133,23 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 * {
-  font-family: 'Ubuntu', sans-serif; }
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+main {
+  height: 100vh;
+  width: 100%; }
 
 .wrapper {
-  margin: 20px auto;
+  background-image: url("../assets/hypnotize.png");
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -165,7 +172,7 @@ button {
   margin-top: 30px; }
 
 .card-container {
-  height: 80vh;
+  height: 200px;
   position: relative;
   width: 80%; }
 
@@ -174,7 +181,7 @@ button {
   -webkit-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  width: 150px;
+  width: 140px;
   -webkit-perspective: 1000;
   perspective: 1000;
   -ms-transform: perspective(1000px);
@@ -189,64 +196,144 @@ button {
   bottom: 0; }
 
 .card-stack.ani0 {
-  right: 948px;
-  bottom: 326px; }
+  right: 100%;
+  bottom: 100%; }
 
 .card-stack.ani1 {
-  right: 711px;
-  bottom: 326px; }
+  right: 83.34%;
+  bottom: 100%; }
 
 .card-stack.ani2 {
-  right: 474px;
-  bottom: 326px; }
+  right: 66.67%;
+  bottom: 100%; }
 
 .card-stack.ani3 {
-  right: 237px;
-  bottom: 326px; }
+  right: 50%;
+  bottom: 100%; }
 
 .card-stack.ani4 {
-  right: 0;
-  bottom: 326px; }
+  right: 33.34%;
+  bottom: 100%; }
 
 .card-stack.ani5 {
-  right: 948px;
-  bottom: 0; }
+  right: 16.67%;
+  bottom: 100%; }
 
 .card-stack.ani6 {
-  right: 711px;
-  bottom: 0; }
+  right: 0;
+  bottom: 100%; }
 
 .card-stack.ani7 {
-  right: 474px;
+  right: 100%;
   bottom: 0; }
 
 .card-stack.ani8 {
-  right: 474px;
+  right: 83.34%;
   bottom: 0; }
 
 .card-stack.ani9 {
-  right: 237px;
+  right: 66.67%;
   bottom: 0; }
 
 .card-stack.ani10 {
-  right: 237px;
+  right: 33.34%;
   bottom: 0; }
 
-.dialogue {
-  display: none; }
+.card-stack.ani11 {
+  right: 16.67%;
+  bottom: 0; }
+
+.card-stack.ani12 {
+  right: 0;
+  bottom: 0; }
+
+.card-stack.ani13 {
+  right: 50%;
+  bottom: 0; }
+
+.card-stack.ani0 {
+  right: 100%;
+  bottom: 100%; }
+
+.card-stack.ani1 {
+  right: 83.34%;
+  bottom: 100%; }
+
+.card-stack.ani2 {
+  right: 66.67%;
+  bottom: 100%; }
+
+.card-stack.ani3 {
+  right: 50%;
+  bottom: 100%; }
+
+.card-stack.ani4 {
+  right: 33.34%;
+  bottom: 100%; }
+
+.card-stack.ani5 {
+  right: 16.67%;
+  bottom: 100%; }
+
+.card-stack.ani6 {
+  right: 0;
+  bottom: 100%; }
+
+.card-stack.ani7 {
+  right: 100%;
+  bottom: 0; }
+
+.card-stack.ani8 {
+  right: 83.34%;
+  bottom: 0; }
+
+.card-stack.ani9 {
+  right: 66.67%;
+  bottom: 0; }
+
+.card-stack.ani10 {
+  right: 33.34%;
+  bottom: 0; }
+
+.card-stack.ani11 {
+  right: 16.67%;
+  bottom: 0; }
+
+.card-stack.ani12 {
+  right: 0;
+  bottom: 0; }
+
+.card-stack.ani13 {
+  right: 50%;
+  bottom: 0; }
 
 .initial-dialogue {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 50px;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  position: absolute; }
 
 img {
   max-width: 100%; }
 
 .tabbed {
-  border: 3px solid red; }
+  background: red; }
 
-.fortune {
+.fortune-container,
+.dialogue {
   display: none; }
+
+.endresult {
+  position: absolute;
+  z-index: 99999000; }
+
+/* Pulse Animation */
+.pulse {
+  animation-name: pulse;
+  -webkit-animation-name: pulse;
+  animation-duration: 2.5s;
+  -webkit-animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite; }
