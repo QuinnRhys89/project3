@@ -1,5 +1,18 @@
 $(function () {
 
+    const fortuneArray =[
+        {
+        url:"assets/fortune.jpg",
+        class:"endresult"
+        },
+        {
+        url:"assets/red-card.jpg",
+        class:"endresult"
+        }
+    ]
+
+    // console.log(fortuneArray, "ARRAY");
+
     // Dialogue on load
     function displayDialogue(){
         $(".dialogue").append("<p class='initial-dialogue'>Pick a card...</p>");
@@ -32,11 +45,18 @@ $(function () {
 
     function displayFortune(){
         // declare a variable = random number based on the length of the array
+        const fortuneResult = Math.floor(Math.random()*fortuneArray.length);
+        const finalImage = fortuneArray[fortuneResult];  
+        console.log(fortuneArray[fortuneResult], "HERE IS THE RESULT");
+        $('.fortune-container').show().append(`<div class="endresult"><img src="${finalImage.url}"></div>`);
+      
+        console.log(fortuneResult);
         // bracket notation to get the random fortune photo using random variable
         // show fortune div
         // get random fortune photo from array
-        // append to fortune did
+        // append to fortune div
     }
+
 
 
     // When the button is clicked, use the _.shuffle method to shuffle the cards array and then redisplay them on the page
