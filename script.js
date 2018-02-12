@@ -6,27 +6,38 @@ myApp.fortuneArray =[
     {
     url:"assets/the-fool-card.png",
     class:"endresult",
-        text: "This is a fortune tha goes with the photo.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione explicabo"
+    title: "Internet Explorer - The Fool",
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse veritatis quisquam repellat quas molestiae officia deserunt aspernatur dignissimos? Labore deserunt asperiores aspernatur perferendis, odit delectus cupiditate quos, eius cum consequuntur enim facere neque nobis nam corporis officia tempora repudiandae libero ut, voluptate repellat? Numquam placeat labore, eaque architecto beatae dolore, reprehenderit at doloremque minus veniam, possimus explicabo distinctio aliquam in.",
     },
     {
     url:"assets/the-magician-card.png",
     class:"endresult",
-    text: "This is a fortune tha goes with the photo"
+    title: "Siri - The Magician",
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse veritatis quisquam repellat quas molestiae officia deserunt aspernatur dignissimos? Labore deserunt asperiores aspernatur perferendis, odit delectus cupiditate quos, eius cum consequuntur enim facere neque nobis nam corporis officia tempora repudiandae libero ut, voluptate repellat? Numquam placeat labore, eaque architecto beatae dolore, reprehenderit at doloremque minus veniam, possimus explicabo distinctio aliquam in.",
     },
     {
     url: "assets/the-death-card.png",
     class: "endresult",
-    text: "This is a fortune tha goes with the photo"
+    title: "Broken Machines - Death",
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse veritatis quisquam repellat quas molestiae officia deserunt aspernatur dignissimos? Labore deserunt asperiores aspernatur perferendis, odit delectus cupiditate quos, eius cum consequuntur enim facere neque nobis nam corporis officia tempora repudiandae libero ut, voluptate repellat? Numquam placeat labore, eaque architecto beatae dolore, reprehenderit at doloremque minus veniam, possimus explicabo distinctio aliquam in.",
     },
     {
-    url: "assets/the-death-card.png",
+    url: "assets/the-devil-card.png",
     class: "endresult",
-    text: "This is a fortune tha goes with the photo"
+    title: "Javascript - The Devil",
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse veritatis quisquam repellat quas molestiae officia deserunt aspernatur dignissimos? Labore deserunt asperiores aspernatur perferendis, odit delectus cupiditate quos, eius cum consequuntur enim facere neque nobis nam corporis officia tempora repudiandae libero ut, voluptate repellat? Numquam placeat labore, eaque architecto beatae dolore, reprehenderit at doloremque minus veniam, possimus explicabo distinctio aliquam in.",
     },
     {
-    url: "assets/the-death-card.png",
+    url: "assets/wheel-of-fortune.png",
     class: "endresult",
-    text: "This is a fortune tha goes with the photo"
+    title: "Bitcoin - Wheel of Fortune",
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse veritatis quisquam repellat quas molestiae officia deserunt aspernatur dignissimos? Labore deserunt asperiores aspernatur perferendis, odit delectus cupiditate quos, eius cum consequuntur enim facere neque nobis nam corporis officia tempora repudiandae libero ut, voluptate repellat? Numquam placeat labore, eaque architecto beatae dolore, reprehenderit at doloremque minus veniam, possimus explicabo distinctio aliquam in.",
+    },
+    {
+    url: "assets/the-lovers-card.png",
+    class: "endresult",
+    title: "Tinder - The Lovers",
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse veritatis quisquam repellat quas molestiae officia deserunt aspernatur dignissimos? Labore deserunt asperiores aspernatur perferendis, odit delectus cupiditate quos, eius cum consequuntur enim facere neque nobis nam corporis officia tempora repudiandae libero ut, voluptate repellat? Numquam placeat labore, eaque architecto beatae dolore, reprehenderit at doloremque minus veniam, possimus explicabo distinctio aliquam in.",
     }
 ]
 
@@ -105,7 +116,10 @@ myApp.displayFortune = function (){
     // declare a variable = random number based on the length of the array
     const fortuneResult = Math.floor(Math.random() * myApp.fortuneArray.length);
     const finalImage = myApp.fortuneArray[fortuneResult]; 
-    $('.fortune-container').empty().show().append(`<div class="endresult"><img src="${finalImage.url}"></div><p class="description">${finalImage.text}</p></div>`);
+    $('.fortune-container').empty().show().append(
+        `<div class="endresult"><img src="${finalImage.url}"></div>
+        <div class="details"><h2 class="header">${finalImage.title}</h2><p class="description">${finalImage.text}</p></div>
+       `);
     $('.hidden-view').show();  
     $('html, body').animate({scrollTop: $('#reveal').offset().top}, 1000);
     // $('a').click(function () {

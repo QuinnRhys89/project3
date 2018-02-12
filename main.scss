@@ -27,6 +27,11 @@ img{
     max-width: 100%;
 }
 
+h2{
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $maincolor;
+}
 
 .wrapper,
 .hidden-wrapper{
@@ -85,6 +90,7 @@ main{
    
 .button-container{
     display: flex;
+    margin-bottom: 30px;
 }
 
 .title{
@@ -283,6 +289,8 @@ main{
     }           
 }
 
+// ****** Hidden View Section ******
+
 .hidden-wrapper{ 
     justify-content: space-around;
 }
@@ -293,9 +301,12 @@ height: calc(100vh-20px);
 margin: 20px 0;
 }
 
-.description{
-    border: 1px solid black;
-    background: white;
+.details{
+    width: 50%
+}
+
+.endresult{
+    margin-top: 20px;
 }
 
 // Styling for Empty Divs
@@ -311,12 +322,15 @@ margin: 20px 0;
     align-items: center;
 }
 
-.endresult{
+h2{
+    margin-bottom: 10px;
 }
 
-.description{
-    margin-left: 2%;
+.details{
+    margin-left: 5%;
 }
+
+
 
 @import "styles/setup.scss";
 @import "styles/setup.scss";
