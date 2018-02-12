@@ -56,6 +56,10 @@ $maincolor: goldenrod;
         width: 80%;
         height: 100vh;
     }
+    
+    .button-container{
+        display: flex;
+    }
 
     button{
         border: 1px solid black;
@@ -63,13 +67,6 @@ $maincolor: goldenrod;
         margin: 20px 0;
         text-transform: uppercase;
         border-radius: 5px 5px;
-    }
-
-    .layout{
-        position: relative;
-        bottom: 0;
-        // left: 50%;
-        // transform: translateX(-50%);
     }
 
     .shuffle{
@@ -83,7 +80,7 @@ $maincolor: goldenrod;
         padding: 50px 0;
     }
 
-    .card-stack {
+    .card-stack{
         position: absolute;
         transition: all 1s cubic-bezier(0.68,-.55,.265,1.55);
 

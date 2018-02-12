@@ -1,4 +1,9 @@
 $(function () {
+
+    // Smooth Scroll
+    $('a').smoothScroll({
+        offset: 0
+    }, 2000);
     
     // Array of Tarot Cards
     const fortuneArray =[
@@ -29,7 +34,7 @@ $(function () {
     //     $('.second-dialogue').slideUp(300).delay(1000).fadeIn(400);
     // }
 
-    displayDialogue();
+    // displayDialogue();
     // secondaryDialogue();
 
 
@@ -40,8 +45,7 @@ $(function () {
             displayFortune();
         } else{
             $('.card-stack').removeClass('tabbed');
-            $(this).toggleClass('tabbed');
-            
+            $(this).toggleClass('tabbed');   
         }
     });
 
@@ -49,19 +53,10 @@ $(function () {
         // declare a variable = random number based on the length of the array
         const fortuneResult = Math.floor(Math.random()*fortuneArray.length);
         const finalImage = fortuneArray[fortuneResult]; 
-        $('.hidden-view').show(); 
-        console.log(fortuneArray[fortuneResult], "HERE IS THE RESULT");
-        $('.fortune-container').show().append(`<div class="endresult"><img src="${finalImage.url}"></div>`);
-      
-
-
-
-        
+        $('.hidden-view').show();
+        $('html, body').animate({scrollTop: $('#reveal').offset().top}, 1000);
+        $('.fortune-container').empty().show().append(`<div class="endresult"><img src="${finalImage.url}"></div><div class="description">"Here is your fortune"</div>`);  
         console.log(fortuneResult);
-        // bracket notation to get the random fortune photo using random variable
-        // show fortune div
-        // get random fortune photo from array
-        // append to fortune div
     }
 
     // function pageSlide(){
@@ -72,24 +67,19 @@ $(function () {
     //     });
     // }
 
-
-
-    // When the button is clicked, use the _.shuffle method to shuffle the cards array and then redisplay them on the page
     $('.layout').click(function () {
         $(".card-stack").each(function (e) {
             // JS method to time out a function/event
             setTimeout(function () {
                 // Add class of cardstack ani and each index (e)
                 $(".card-stack").eq(e).attr("class", "card-stack ani" + e);
+                $('.layout').fadeOut(2500);
             }, e * 150)
-            // $('.shuffle').delay(3000).fadeIn(400);
-            $('.layout').delay(3000)
-            $('.layout').replaceWith($('.shuffle')) ;
+
         });
         // Show shuffle button and hide layout button
     });
 
-    // On Click Shuffle Button
     $('.shuffle').click(function () {
         $(".card-stack").each(function (e) {
             // JS method to time out a function/event
@@ -102,11 +92,9 @@ $(function () {
                 $(".card-stack").eq(e).attr("class", "card-stack ani" + e); 
                 }  
             }, e * 150)
+
+            console.log(e);
         });
-    });
-
-    $('.read-again').click(function () {
-
     });
 });
 // end of document ready
