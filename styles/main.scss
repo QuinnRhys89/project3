@@ -1,3 +1,6 @@
+$maincolor: goldenrod;
+
+
 @import "_setup.scss";
 
     *{
@@ -5,6 +8,36 @@
         margin: 0;
         padding: 0;
     }
+
+    .hidden-view{
+        display: none;
+        height: calc(100vh-20px);
+        margin: 20px 0;
+    }
+    
+    .hidden-wrapper{
+        background-image: url("../assets/hypnotize.png");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        border: 2px solid black;
+        border-radius: 10px 10px;
+        width: 80%;
+        margin: 0 auto;
+    }    
+
+
+    .title{
+        margin: 50px 0;
+    }
+
+    svg{
+        height: 80px;
+        fill: goldenrod;
+    }
+
 
     main{
         height: 100vh;
@@ -15,7 +48,7 @@
         background-image: url("../assets/hypnotize.png");
         margin: 0 auto;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         flex-direction: column;  
         border: 2px solid black;
@@ -27,8 +60,16 @@
     button{
         border: 1px solid black;
         padding: 15px 30px;
+        margin: 20px 0;
         text-transform: uppercase;
         border-radius: 5px 5px;
+    }
+
+    .layout{
+        position: relative;
+        bottom: 0;
+        // left: 50%;
+        // transform: translateX(-50%);
     }
 
     .shuffle{
@@ -36,16 +77,19 @@
     }
 
     .card-container{
-        height: 200px;
+        height: 100px;
         position: relative;
         width: 80%;
+        padding: 50px 0;
     }
 
     .card-stack {
         position: absolute;
         transition: all 1s cubic-bezier(0.68,-.55,.265,1.55);
 
-        width: 140px;
+        // width: 140px;
+
+        width: 10vw;
   
         perspective: 1000;
         -ms-transform: perspective(1000px);
@@ -57,7 +101,6 @@
         right: 50%;
         transform: translateX(50%);
         bottom: 0;
-        // margin: 30px 0 15px 15px;
     }
     
     .card-stack.ani0 {
@@ -133,104 +176,115 @@
 
 // Positions for Shuffle
 
-.card-stack.ani0 {
-    right: 100%;
-    bottom: 100%;
-}
-
-.card-stack.ani1 {
-    right: 83.34%;
-    bottom: 100%;
-}
-
-.card-stack.ani2 {
+.card-stack.aniTwoTwo0 {
     right: 66.67%;
     bottom: 100%;
 }
 
-.card-stack.ani3 {
+.card-stack.aniTwo1 {
+    right: 83.34%;
+    bottom: 100%;
+}
+
+.card-stack.aniTwo2 {
+    right: 0;
+    bottom: 0;
+}
+
+.card-stack.aniTwo3 {
     right: 50%;
     bottom: 100%;
 }
 
-.card-stack.ani4 {
+.card-stack.aniTwo4 {
     right: 33.34%;
     bottom: 100%;
 }
 
-.card-stack.ani5 {
-    right: 16.67%;
+.card-stack.aniTwo5 {
+    right: 100%;
     bottom: 100%;
 }
 
-.card-stack.ani6 {
+.card-stack.aniTwo6 {
     right: 0;
     bottom: 100%;
 }
 
-.card-stack.ani7 {
-    right: 100%;
+.card-stack.aniTwo7 {
+    right: 33.34%;
     bottom: 0;
 }
 
-.card-stack.ani8 {
+.card-stack.aniTwo8 {
     right: 83.34%;
     bottom: 0;
 }
 
-.card-stack.ani9 {
+.card-stack.aniTwo9 {
     right: 66.67%;
     bottom: 0;
 }
 
-.card-stack.ani10 {
-    right: 33.34%;
+.card-stack.aniTwo10 {
+    right: 16.67%;
+    bottom: 100%;
+}
+
+.card-stack.aniTwo11 {
+    right: 100%;
     bottom: 0;
 }
 
-.card-stack.ani11 {
+.card-stack.aniTwo12 {
     right: 16.67%;
     bottom: 0;
 }
 
-.card-stack.ani12 {
-    right: 0;
-    bottom: 0;
-}
-
-.card-stack.ani13 {
+.card-stack.aniTwo13 {
     right: 50%;
     bottom: 0;
 }
 
-    .initial-dialogue{
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: 50px;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-    }
+.initial-dialogue{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 50px;
+}
 
-    img{
-        max-width: 100%;
-    }
+.dialogue{
 
-    .tabbed{
-        background: red;
-    }
+}
 
-    // Styling for Empty Divs
-    .fortune-container,
-    .dialogue{
-        display: none;
-    }
+img{
+    max-width: 100%;
+}
 
-    // End Result of Tarot Reading
-    .endresult{
-        position:absolute;
-        z-index: 99999000;
-    }
+.tabbed{
+    background: goldenrod;
+}
+
+// Styling for Empty Divs
+.fortune-container,
+.dialogue{
+    display: none;
+}
+
+.fortune-container{
+    display: flex;
+}
+
+.fortune-container,
+.endresult img{
+    width: 300px;
+}
+
+// End Result of Tarot Reading
+.endresult img{
+position:absolute;
+z-index: 99999000;
+width: 200px;
+}
 
 /* Pulse Animation */
 .pulse{
@@ -244,32 +298,32 @@
     -webkit-animation-iteration-count: infinite;
 }
 
-// @keyframes pulse {
-//     0% {
-//         transform: scale(0.9);
-//         opacity: 0.7;       
-//     }
-//     50% {
-//         transform: scale(1);
-//         opacity: 1; 
-//     }   
-//     100% {
-//         transform: scale(0.9);
-//         opacity: 0.7;   
-//     }           
-// }
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;       
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1; 
+    }   
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;   
+    }           
+}
 
-// @-webkit-keyframes pulse {
-//     0% {
-//         -webkit-transform: scale(0.95);
-//         opacity: 0.7;       
-//     }
-//     50% {
-//         -webkit-transform: scale(1);
-//         opacity: 1; 
-//     }   
-//     100% {
-//         -webkit-transform: scale(0.95);
-//         opacity: 0.7;   
-//     }           
-// }
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0.95);
+        opacity: 0.7;       
+    }
+    50% {
+        -webkit-transform: scale(1);
+        opacity: 1; 
+    }   
+    100% {
+        -webkit-transform: scale(0.95);
+        opacity: 0.7;   
+    }           
+}
