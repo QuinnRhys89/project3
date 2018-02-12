@@ -1,72 +1,60 @@
-$(function () {
+// my App Object
+const myApp = {};
 
-    // Smooth Scroll
-    $('a').smoothScroll({
-        offset: 0
-    }, 2000);
-    
-    // Array of Tarot Cards
-    const fortuneArray =[
-        {
-        url:"assets/the-fool-card.png",
-        class:"endresult"
-        },
-        {
-        url:"assets/the-magician-card.png",
-        class:"endresult"
-        },
-        {
-        url: "assets/the-death-card.png",
-        class: "endresult"
-        }
-    ]
-
-    // Dialogue on load
-    function displayDialogue(){
-        $(".dialogue").append("<p class='initial-dialogue'>Pick a card...</p>");
-        $('.dialogue').slideUp(300).delay(1000).fadeIn(400);
-        $('.shuffle').hide();
-        $('.initial-dialogue').delay(3000).fadeOut()
+// Array of Tarot Cards
+myApp.fortuneArray =[
+    {
+    url:"assets/the-fool-card.png",
+    class:"endresult",
+    text: "This is a fortune tha goes with the photo"
+    },
+    {
+    url:"assets/the-magician-card.png",
+    class:"endresult",
+    text: "This is a fortune tha goes with the photo"
+    },
+    {
+    url: "assets/the-death-card.png",
+    class: "endresult",
+    text: "This is a fortune tha goes with the photo"
+    },
+    {
+    url: "assets/the-death-card.png",
+    class: "endresult",
+    text: "This is a fortune tha goes with the photo"
+    },
+    {
+    url: "assets/the-death-card.png",
+    class: "endresult",
+    text: "This is a fortune tha goes with the photo"
     }
+]
 
-    // function secondaryDialogue(){
+// Smooth Scroll
+$('a').smoothScroll({
+    offset: 0
+});
+
+
+// Dialogue on load
+myApp.displayDialogue = function(){
+    $(".dialogue").append("<p class='initial-dialogue'>Pick a card...</p>");
+    $('.dialogue').slideUp(300).delay(1000).fadeIn(400);
+    $('.initial-dialogue').delay(3000).fadeOut()
+}
+
+// function secondaryDialogue(){
     //     $('.dialogue').append("<p class='second-dialogue'>Any Card...</p>");
     //     $('.second-dialogue').slideUp(300).delay(1000).fadeIn(400);
     // }
-
+    
     // displayDialogue();
     // secondaryDialogue();
-
-
-// When the page loads, loop through that array and append each card to the container _shuffle method
-  
-    $('.card-stack').click(function () {
-        if ($(this).hasClass('tabbed')){
-            displayFortune();
-        } else{
-            $('.card-stack').removeClass('tabbed');
-            $(this).toggleClass('tabbed');   
-        }
-    });
-
-    function displayFortune(){
-        // declare a variable = random number based on the length of the array
-        const fortuneResult = Math.floor(Math.random()*fortuneArray.length);
-        const finalImage = fortuneArray[fortuneResult]; 
-        $('.hidden-view').show();
-        $('html, body').animate({scrollTop: $('#reveal').offset().top}, 1000);
-        $('.fortune-container').empty().show().append(`<div class="endresult"><img src="${finalImage.url}"></div><div class="description">"Here is your fortune"</div>`);  
-        console.log(fortuneResult);
-    }
-
-    // function pageSlide(){
-    //     $().click(function (event) {
-    //         page.animate({
-    //             scrollTop: 0,
-    //         }, 1000);
-    //     });
-    // }
-
+    
+    
+    //Lay Out Cards Function
+myApp.cardLayout = function(){
+    $('card-stack').removeClass('highlight');
     $('.layout').click(function () {
         $(".card-stack").each(function (e) {
             // JS method to time out a function/event
@@ -75,12 +63,15 @@ $(function () {
                 $(".card-stack").eq(e).attr("class", "card-stack ani" + e);
                 $('.layout').fadeOut(2500);
             }, e * 150)
-
         });
-        // Show shuffle button and hide layout button
     });
+}
 
+
+// Shuffle Cards Functions
+myApp.cardShuffle = function(){
     $('.shuffle').click(function () {
+        $('.card-stack').removeClass('highlight');
         $(".card-stack").each(function (e) {
             // JS method to time out a function/event
             setTimeout(function () {
@@ -89,12 +80,51 @@ $(function () {
                     $('.card-stack').eq(e).removeClass("ani" + e).addClass("aniTwo" + e);
                     console.log("We are removing the class");
                 } else{
-                $(".card-stack").eq(e).attr("class", "card-stack ani" + e); 
+                    $(".card-stack").eq(e).attr("class", "card-stack ani" + e); 
                 }  
             }, e * 150)
-
-            console.log(e);
         });
     });
+}
+
+// Card Selection Function 
+myApp.cardSelection = function (){
+    $('.card-stack').click(function () {
+        if ($(this).hasClass('highlight')){
+            myApp.displayFortune();
+           
+        } else{
+            $('.card-stack').removeClass('highlight');
+            $(this).toggleClass('highlight');   
+        }
+    });
+}
+
+// Display Fortune Function (Append Result to Page)
+myApp.displayFortune = function (){
+    // declare a variable = random number based on the length of the array
+    const fortuneResult = Math.floor(Math.random() * myApp.fortuneArray.length);
+    const finalImage = myApp.fortuneArray[fortuneResult]; 
+    $('.fortune-container').empty().show().append(`<div class="endresult"><img src="${finalImage.url}"></div><p class="description">${finalImage.text}</p></div>`);
+    $('.hidden-view').show();  
+    $('html, body').animate({scrollTop: $('#reveal').offset().top}, 1000);
+    console.log(fortuneResult);
+    
+}
+
+
+
+// Initialization Function
+myApp.init = function (){
+    myApp.displayDialogue();
+    myApp.cardLayout();
+    myApp.cardShuffle ();
+    myApp.cardSelection();
+}
+
+
+// Document Ready
+$(function () {
+    myApp.init();
 });
-// end of document ready
+    

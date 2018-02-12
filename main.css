@@ -133,9 +133,32 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 * {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin: 0;
   padding: 0; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+button {
+  border: 1px solid black;
+  border-bottom: 4px solid black;
+  padding: 15px 30px;
+  margin: 20px 0;
+  text-transform: uppercase;
+  border-radius: 5px 5px; }
+
+button:hover {
+  border: 1px solid goldenrod;
+  border-bottom: 4px solid goldenrod;
+  color: goldenrod; }
+
+button a {
+  height: 100%; }
+
+button:hover a {
+  color: goldenrod; }
 
 .hidden-view {
   display: none;
@@ -143,13 +166,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   margin: 20px 0; }
 
 .hidden-wrapper {
-  background-image: url("../assets/hypnotize.png");
+  background-image: url("assets/hypnotize.png");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -163,8 +185,13 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   width: 80%;
   margin: 0 auto; }
 
+.description {
+  border: 1px solid black;
+  background: white; }
+
 .title {
-  margin: 50px 0; }
+  margin: 50px 0;
+  height: 100px; }
 
 svg {
   height: 80px;
@@ -175,7 +202,7 @@ main {
   width: 100%; }
 
 .wrapper {
-  background-image: url("../assets/hypnotize.png");
+  background-image: url("assets/hypnotize.png");
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -200,24 +227,17 @@ main {
   display: -ms-flexbox;
   display: flex; }
 
-button {
-  border: 1px solid black;
-  padding: 15px 30px;
-  margin: 20px 0;
-  text-transform: uppercase;
-  border-radius: 5px 5px; }
-
-.shuffle {
-  margin-top: 30px; }
-
 .card-container {
-  height: 100px;
+  height: 210px;
   position: relative;
   width: 80%;
-  padding: 50px 0; }
+  padding: 50px 0;
+  margin-top: 150px; }
+
+.shuffle {
+  margin-left: 30px; }
 
 .card-stack {
-  position: absolute;
   -webkit-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -291,12 +311,12 @@ button {
   right: 50%;
   bottom: 0; }
 
-.card-stack.aniTwoTwo0 {
-  right: 66.67%;
-  bottom: 100%; }
+.card-stack.aniTwo0 {
+  right: 50%;
+  bottom: 0; }
 
 .card-stack.aniTwo1 {
-  right: 83.34%;
+  right: 66.67%;
   bottom: 100%; }
 
 .card-stack.aniTwo2 {
@@ -344,8 +364,8 @@ button {
   bottom: 0; }
 
 .card-stack.aniTwo13 {
-  right: 50%;
-  bottom: 0; }
+  right: 83.34%;
+  bottom: 100%; }
 
 .initial-dialogue {
   text-transform: uppercase;
@@ -355,7 +375,7 @@ button {
 img {
   max-width: 100%; }
 
-.tabbed {
+.highlight {
   background: goldenrod; }
 
 .fortune-container,
@@ -369,12 +389,7 @@ img {
 
 .fortune-container,
 .endresult img {
-  width: 300px; }
-
-.endresult img {
-  position: absolute;
-  z-index: 99999000;
-  width: 200px; }
+  width: 80%; }
 
 /* Pulse Animation */
 .pulse {
