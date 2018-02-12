@@ -6,7 +6,7 @@ myApp.fortuneArray =[
     {
     url:"assets/the-fool-card.png",
     class:"endresult",
-    text: "This is a fortune tha goes with the photo"
+        text: "This is a fortune tha goes with the photo.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione explicabo"
     },
     {
     url:"assets/the-magician-card.png",
@@ -108,11 +108,10 @@ myApp.displayFortune = function (){
     $('.fortune-container').empty().show().append(`<div class="endresult"><img src="${finalImage.url}"></div><p class="description">${finalImage.text}</p></div>`);
     $('.hidden-view').show();  
     $('html, body').animate({scrollTop: $('#reveal').offset().top}, 1000);
-    console.log(fortuneResult);
-    
+    // $('a').click(function () {
+    //     $('.hidden-view').hide();
+    // });
 }
-
-
 
 // Initialization Function
 myApp.init = function (){
@@ -120,6 +119,7 @@ myApp.init = function (){
     myApp.cardLayout();
     myApp.cardShuffle ();
     myApp.cardSelection();
+    
 }
 
 

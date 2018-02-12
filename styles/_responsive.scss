@@ -1,16 +1,119 @@
 // Portrait tablet and small desktops
 @media (max-width: 940px){
-   
+    body{
+        background: red;
+    }
+
+    .card-stack{
+        width: 15vh;
+    }
+
+    .card-stack.ani0 {
+        right: 100%;
+        bottom: 100%;
+    }
+
+    .card-stack.ani1 {
+        right: 80%;
+        bottom: 100%;
+    }
+
+    .card-stack.ani2 {
+        right: 60%;
+        bottom: 100%;
+    }
+
+    .card-stack.ani3 {
+        right: 40%;
+        bottom: 100%;
+    }
+
+    .card-stack.ani4 {
+        right: 20%;
+        bottom: 100%;
+    }
+
+    .card-stack.ani5 {
+        right: 0;
+        bottom: 100%;
+    }
+
+    .card-stack.ani6 {
+        right: 100%;
+        bottom: 50%;
+    }
+
+    .card-stack.ani7 {
+        right: 80%;
+        bottom: 50%;;
+    }
+
+    .card-stack.ani8 {
+        right: 60%;
+        bottom: 50%;;
+    }
+        
+    .card-stack.ani9 {
+        right: 40%;
+        bottom: 50%;;
+    }
+
+    .card-stack.ani10 {
+        right: 20%;
+        bottom: 50%;;
+    }
+
+    .card-stack.ani11 {
+        right: 75%;
+        bottom: 0;
+    }
+
+    .card-stack.ani12 {
+        right: 50%;
+        bottom: 0;
+    }
+
+    .card-stack.ani13 {
+        right: 25%;
+        bottom: 0;
+    }
+
+    .card-stack:hover{
+        z-index: 20000;
+    }
 }
 
 // Landscape phone to portrait tablet
 @media (max-width: 768px){
+    body{
+        background: blue;
+    }
 
+   .fortune-container{
+       flex-direction: column;
+   }
 }
 
 
 // Mobile - Landscape phones and down
 @media (max-width: 480px){
+    body{
+        background:yellow;
+    }
 
+    .wrapper, 
+    .hidden-view.wrapper{
+        width: 95%;
+    }
+
+    .card-container{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .card-stack{
+        width: 100%;
+        display: block;
+    }
 
 }

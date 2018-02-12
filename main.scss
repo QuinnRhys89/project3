@@ -1,8 +1,7 @@
 $maincolor: goldenrod;
 $mainfont: 'Ubuntu', sans-serif;
 
-@import "styles/responsive.scss";
-@import "styles/setup.scss";
+
 
 // Global Styles
 
@@ -12,9 +11,35 @@ $mainfont: 'Ubuntu', sans-serif;
     padding: 0;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
 a{
     text-decoration: none;
     color: black;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+.wrapper,
+.hidden-wrapper{
+    background-image: url("assets/hypnotize.png");
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;  
+    border: 2px solid black;
+    border-radius: 10px 10px;
+    width: 80%;
+    height: 100%;
 }
 
 
@@ -40,40 +65,16 @@ button:hover a{
     color: $maincolor;
 }
 
+.highlight{
+    background: $maincolor;
+}
+
+.main, 
 .hidden-view{
-display: none;
-height: calc(100vh-20px);
-margin: 20px 0;
+    padding: 25px 0;
+    height: 95vh;
+    // margin: 10px 0;
 }
-
-.hidden-wrapper{
-    background-image: url("assets/hypnotize.png");
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    border: 2px solid black;
-    border-radius: 10px 10px;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.description{
-    border: 1px solid black;
-    background: white;
-}
-
-.title{
-    margin: 50px 0;
-    height: 100px;
-}
-
-svg{
-    height: 80px;
-    fill: $maincolor;
-}
-
 // ****** Main Section ******
 
 main{
@@ -81,23 +82,15 @@ main{
     width: 100%;
 }
     
-.wrapper{
-    background-image: url("assets/hypnotize.png");
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;  
-    border: 2px solid black;
-    border-radius: 10px 10px;
-    width: 80%;
-    height: 100vh;
-}
-    
+   
 .button-container{
     display: flex;
 }
 
+.title{
+    margin: 50px 0;
+    height: 100px;
+}
    
 .card-container{
     height: 210px;
@@ -106,10 +99,6 @@ main{
     padding: 50px 0;
     margin-top: 150px;
 }
-.shuffle{
-    margin-left: 30px;
-}
-
 
 .card-stack{
     // position: absolute;
@@ -275,68 +264,8 @@ main{
     bottom: 100%;
 }
 
-.initial-dialogue{
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 50px;
-}
-
-
-img{
-    max-width: 100%;
-}
-
-.highlight{
-    background: $maincolor;
-}
-
-// Styling for Empty Divs
-.fortune-container,
-.dialogue{
-    display: none;
-}
-
-.fortune-container{
-    display: flex;
-}
-
-.fortune-container,
-.endresult img{
-    width: 80%;
-}
-
-// End Result of Tarot Reading
-// .endresult img{
-// position:absolute;
-// z-index: 99999000;
-// width: 200px;
-// }
-
-/* Pulse Animation */
-.pulse{
-    animation-name: pulse;
-    -webkit-animation-name: pulse;  
-
-    animation-duration: 2.5s;   
-    -webkit-animation-duration: 2.5s;
-
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.9);
-        opacity: 0.7;       
-    }
-    50% {
-        transform: scale(1);
-        opacity: 1; 
-    }   
-    100% {
-        transform: scale(0.9);
-        opacity: 0.7;   
-    }           
+.shuffle{
+    margin-left: 30px;
 }
 
 @-webkit-keyframes pulse {
@@ -353,3 +282,50 @@ img{
         opacity: 0.7;   
     }           
 }
+
+.hidden-wrapper{ 
+    justify-content: space-around;
+}
+
+.hidden-view{
+display: none;
+height: calc(100vh-20px);
+margin: 20px 0;
+}
+
+.description{
+    border: 1px solid black;
+    background: white;
+}
+
+// Styling for Empty Divs
+.fortune-container,
+.dialogue{
+    display: none;
+}
+
+.fortune-container{
+    display: flex;
+    width: 80%;
+    // height: 300px;
+    align-items: center;
+}
+
+.endresult{
+}
+
+.description{
+    margin-left: 2%;
+}
+
+@import "styles/setup.scss";
+@import "styles/setup.scss";
+@import "styles/responsive.scss";
+@import "styles/animations.scss";
+
+
+// .initial-dialogue{
+//     text-transform: uppercase;
+//     font-weight: 400;
+//     font-size: 50px;
+// }
