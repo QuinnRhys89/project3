@@ -1,8 +1,5 @@
 // Portrait tablet and small desktops
 @media (max-width: 940px){
-    body{
-        background: red;
-    }
 
     .card-stack{
         width: 15vh;
@@ -85,9 +82,6 @@
 
 // Landscape phone to portrait tablet
 @media (max-width: 768px){
-    body{
-        background: blue;
-    }
 
    .fortune-container{
        flex-direction: column;
@@ -118,9 +112,6 @@
 
 // Mobile - Landscape phones and down
 @media (max-width: 480px){
-    body{
-        background:yellow;
-    }
 
     .wrapper, 
     .hidden-view.wrapper{
